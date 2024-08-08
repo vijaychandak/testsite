@@ -92,6 +92,27 @@
 		initESW('https://service.force.com');
 	}
 </script>
+<!-- Messagging in Web code -->
+	<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DR0000002JkCI',
+				'Messaging_in_Web_POC',
+				'https://customercare-mastercard--qa.sandbox.my.site.com/ESWMessaginginWebPOC1722405013037',
+				{
+					scrt2URL: 'https://customercare-mastercard--qa.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://customercare-mastercard--qa.sandbox.my.site.com/ESWMessaginginWebPOC1722405013037/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<!-- messagging in web -->
 </body>
 <footer>
   
