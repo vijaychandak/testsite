@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src *; img-src *; child-src *; script-src * 'unsafe-inline';" />
+
+<h1>Welcome To The Fraud Center ChatBot Demo</h1>
+</head>
+<body>
+<header>
+</br>
+	<h1> The Fraud Center Demo Project</h1>
+</br>
+      </header>
+      <nav>
+      </nav>
+
+      <main>
+	      </br>
+        <h2>Welcome to The Fraud Center Demo</h2>
+	      </br>
+       	<p>Try chatting to our TFC Einstein Bot</p>
+	      </br>
+    </main>
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #222222;
+		font-family: "Salesforce Sans", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #222222;
+	}
+	@font-face {
+		font-family: 'Salesforce Sans';
+		src: url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.woff') format('woff'),
+		url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.ttf') format('truetype');
+	}
+</style>
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.displayHelpButton = true; //Or false
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+		embedded_svc.settings.defaultMinimizedText = 'Chat'; //(Defaults to Chat with an Expert)
+		embedded_svc.settings.disabledMinimizedText = 'Chat'; //(Defaults to Agent Offline)
+
+		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+		// Settings for Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		/*embedded_svc.settings.prepopulatedPrechatFields = {
+		    FirstName: “Suresh”,
+		    LastName: “Kumar”,
+		    Email: “suresh.kumar@mastercard.com”,
+		    Subject: “Hello”
+		};*/
+		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
+
+		embedded_svc.init(
+			'https://customercare-mastercard--devsandbox.sandbox.my.salesforce.com',
+			'https://customercare-mastercard--devsandbox.sandbox.my.site.com/itsmcomm',
+			gslbBaseURL,
+			'00D0r0000008iMn',
+			'TFC_Fraud',
+			{
+				baseLiveAgentContentURL: 'https://c.la3-c1cs-ia7.salesforceliveagent.com/content',
+				deploymentId: '572Dy00000000Np',
+				buttonId: '573Dy00000000b0',
+				baseLiveAgentURL: 'https://d.la3-c1cs-ia7.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'TFC_Fraud',
+				isOfflineSupportEnabled: false
+			}
+		);
+	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://customercare-mastercard--devsandbox.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DR0000002JkCI',
+				'Messaging_in_Web_POC',
+				'https://customercare-mastercard--qa.sandbox.my.site.com/ESWMessaginginWebPOC1722405013037',
+				{
+					scrt2URL: 'https://customercare-mastercard--qa.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+	   <script type='text/javascript' src='https://customercare-mastercard--qa.sandbox.my.site.com/ESWMessaginginWebPOC1722405013037/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()' onerror='alert("error loading script")'></script>
+
+	
+</body>
+<footer>
+  
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+	
+
+<script type='text/javascript'>
+ 
+(function(){var g=function(e,h,f,g){
+ 
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+ 
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+ 
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+ 
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+ 
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+ 
+try{(new g(100,"r","QSI_S_ZN_0pLCj33PXsid434","https://zn0plcj33pxsid434-mastercardvoc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_0pLCj33PXsid434")).start()}catch(i){}})();
+ 
+</script><div id='ZN_0pLCj33PXsid434'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+ 
+<!--END WEBSITE FEEDBACK SNIPPET-->
+</footer>
+
+</html>
